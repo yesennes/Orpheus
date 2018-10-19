@@ -1,0 +1,134 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CONFIG_ITEM_FACTORIES	src/main/java/com/lsenseney/orpheus/PluginManger.java	/^    private static Map<String, ConfigItemFactory> CONFIG_ITEM_FACTORIES = new HashMap<String, ConfigItemFactory>();$/;"	f	class:PluginManger	file:
+ConfigItem	src/main/java/com/lsenseney/orpheus/plugin/ConfigItem.java	/^public interface ConfigItem {$/;"	i
+ConfigItemFactory	src/main/java/com/lsenseney/orpheus/plugin/ConfigItemFactory.java	/^public interface ConfigItemFactory {$/;"	i
+Configuration	src/main/java/com/lsenseney/orpheus/Configuration.java	/^    public Configuration(InputStream input) throws IllegalArgumentException, ConfigurationSetupFailedException {$/;"	m	class:Configuration
+Configuration	src/main/java/com/lsenseney/orpheus/Configuration.java	/^public class Configuration {$/;"	c
+ConfigurationFailedException	src/main/java/com/lsenseney/orpheus/plugin/ConfigurationFailedException.java	/^    public ConfigurationFailedException(String message, Throwable cause){$/;"	m	class:ConfigurationFailedException
+ConfigurationFailedException	src/main/java/com/lsenseney/orpheus/plugin/ConfigurationFailedException.java	/^public class ConfigurationFailedException extends Exception {$/;"	c
+ConfigurationSetupFailedException	src/main/java/com/lsenseney/orpheus/ConfigurationSetupFailedException.java	/^    public ConfigurationSetupFailedException(String message, Exception cause){$/;"	m	class:ConfigurationSetupFailedException
+ConfigurationSetupFailedException	src/main/java/com/lsenseney/orpheus/ConfigurationSetupFailedException.java	/^public class ConfigurationSetupFailedException extends Exception{$/;"	c
+Dependency	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^public interface Dependency extends Cloneable{$/;"	i
+DependencySelector	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^public class DependencySelector {$/;"	c
+Environment	src/main/java/com/lsenseney/orpheus/Environment.java	/^public class Environment{$/;"	c
+EnvironmentGenerator	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^public abstract class EnvironmentGenerator {$/;"	c
+EnvironmentVerifier	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentVerifier.java	/^public interface EnvironmentVerifier {$/;"	i
+GradleConfigItem	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public GradleConfigItem(JSONObject object) throws IOException{$/;"	m	class:GradleConfigItem
+GradleConfigItem	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^public class GradleConfigItem implements ConfigItem{$/;"	c
+GradleConfigItemFactory	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItemFactory.java	/^public class GradleConfigItemFactory implements ConfigItemFactory{$/;"	c
+GradleVerifier	src/main/java/com/lsenseney/orpheus/gradle/GradleVerifier.java	/^    public GradleVerifier(String task){$/;"	m	class:GradleVerifier
+GradleVerifier	src/main/java/com/lsenseney/orpheus/gradle/GradleVerifier.java	/^public class GradleVerifier implements EnvironmentVerifier{$/;"	c
+MavenDependency	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public MavenDependency(String name, String initialVersion) throws IOException{$/;"	m	class:MavenDependency
+MavenDependency	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^public class MavenDependency implements Dependency{$/;"	c
+Orpheus	src/main/java/com/lsenseney/orpheus/Orpheus.java	/^public class Orpheus {$/;"	c
+PluginManger	src/main/java/com/lsenseney/orpheus/PluginManger.java	/^public class PluginManger {$/;"	c
+Utils	src/main/java/com/lsenseney/Utils.java	/^public class Utils {$/;"	c
+addDependencies	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    public void addDependencies(Collection<Dependency> dependencies){$/;"	m	class:DependencySelector
+addDependencies	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    public void addDependencies(Dependency... dependencies){$/;"	m	class:DependencySelector
+addFinalizer	src/main/java/com/lsenseney/orpheus/Environment.java	/^    public void addFinalizer(Function<Environment, ConfigurationFailedException> consumer){$/;"	m	class:Environment
+buf	src/main/java/com/lsenseney/Utils.java	/^    private static byte[] buf = new byte[1024];$/;"	f	class:Utils	file:
+cleanUp	src/main/java/com/lsenseney/orpheus/Environment.java	/^    public void cleanUp(){$/;"	m	class:Environment
+com.lsenseney	src/main/java/com/lsenseney/Utils.java	/^package com.lsenseney;$/;"	p
+com.lsenseney.orpheus	src/main/java/com/lsenseney/orpheus/Configuration.java	/^package com.lsenseney.orpheus;$/;"	p
+com.lsenseney.orpheus	src/main/java/com/lsenseney/orpheus/ConfigurationSetupFailedException.java	/^package com.lsenseney.orpheus;$/;"	p
+com.lsenseney.orpheus	src/main/java/com/lsenseney/orpheus/Environment.java	/^package com.lsenseney.orpheus;$/;"	p
+com.lsenseney.orpheus	src/main/java/com/lsenseney/orpheus/Orpheus.java	/^package com.lsenseney.orpheus;$/;"	p
+com.lsenseney.orpheus	src/main/java/com/lsenseney/orpheus/PluginManger.java	/^package com.lsenseney.orpheus;$/;"	p
+com.lsenseney.orpheus.gradle	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^package com.lsenseney.orpheus.gradle;$/;"	p
+com.lsenseney.orpheus.gradle	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItemFactory.java	/^package com.lsenseney.orpheus.gradle;$/;"	p
+com.lsenseney.orpheus.gradle	src/main/java/com/lsenseney/orpheus/gradle/GradleVerifier.java	/^package com.lsenseney.orpheus.gradle;$/;"	p
+com.lsenseney.orpheus.gradle	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^package com.lsenseney.orpheus.gradle;$/;"	p
+com.lsenseney.orpheus.plugin	src/main/java/com/lsenseney/orpheus/plugin/ConfigItem.java	/^package com.lsenseney.orpheus.plugin;$/;"	p
+com.lsenseney.orpheus.plugin	src/main/java/com/lsenseney/orpheus/plugin/ConfigItemFactory.java	/^package com.lsenseney.orpheus.plugin;$/;"	p
+com.lsenseney.orpheus.plugin	src/main/java/com/lsenseney/orpheus/plugin/ConfigurationFailedException.java	/^package com.lsenseney.orpheus.plugin;$/;"	p
+com.lsenseney.orpheus.plugin	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^package  com.lsenseney.orpheus.plugin;$/;"	p
+com.lsenseney.orpheus.plugin	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^package com.lsenseney.orpheus.plugin;$/;"	p
+com.lsenseney.orpheus.plugin	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^package com.lsenseney.orpheus.plugin;$/;"	p
+com.lsenseney.orpheus.plugin	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentVerifier.java	/^package com.lsenseney.orpheus.plugin;$/;"	p
+configureEnvironement	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private void configureEnvironement(Environment environ, String version) throws ConfigurationFailedException{$/;"	m	class:MavenDependency	file:
+configureEnvironement	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private void configureEnvironement(Environment environ, int version) throws ConfigurationFailedException{$/;"	m	class:MavenDependency	file:
+configureEnvironement	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public void configureEnvironement(Environment environ) throws ConfigurationFailedException{$/;"	m	class:MavenDependency
+configureEnvironement	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^    public void configureEnvironement(Environment e) throws ConfigurationFailedException;$/;"	m	interface:Dependency
+configureSuccessfullVersion	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public void configureSuccessfullVersion(Environment environ) throws ConfigurationFailedException{$/;"	m	class:MavenDependency
+configureSuccessfullVersion	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^    public void configureSuccessfullVersion(Environment e) throws ConfigurationFailedException;$/;"	m	interface:Dependency
+createItem	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItemFactory.java	/^    public ConfigItem createItem(JSONObject obj) throws IOException{$/;"	m	class:GradleConfigItemFactory
+createItem	src/main/java/com/lsenseney/orpheus/plugin/ConfigItemFactory.java	/^    public ConfigItem createItem(JSONObject obj) throws Exception;$/;"	m	interface:ConfigItemFactory
+current	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    protected Environment current;$/;"	f	class:DependencySelector
+currentlyTesting	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    protected ListIterator<Dependency> currentlyTesting;$/;"	f	class:DependencySelector
+dependencies	src/main/java/com/lsenseney/orpheus/Configuration.java	/^    private Set<Dependency> dependencies = new HashSet<>();$/;"	f	class:Configuration	file:
+dependencies	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public List<Dependency> dependencies;$/;"	f	class:GradleConfigItem
+dependencies	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    protected List<Dependency> dependencies = new LinkedList<Dependency>();$/;"	f	class:DependencySelector
+dependenciesBlock	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    private static final Pattern dependenciesBlock = Pattern.compile("dependencies\\\\s*{([^}]*)}");$/;"	f	class:GradleConfigItem	file:
+dependenciesPattern	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    private static final Pattern dependenciesPattern = Pattern.compile("'(:?[^:']+):([^:'])'");$/;"	f	class:GradleConfigItem	file:
+destroy	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItemFactory.java	/^    public void destroy(){$/;"	m	class:GradleConfigItemFactory
+destroy	src/main/java/com/lsenseney/orpheus/plugin/ConfigItemFactory.java	/^    public void destroy();$/;"	m	interface:ConfigItemFactory
+destroyPlugins	src/main/java/com/lsenseney/orpheus/PluginManger.java	/^    public static void destroyPlugins(){$/;"	m	class:PluginManger
+exec	src/main/java/com/lsenseney/orpheus/Environment.java	/^    public Process exec(File path, String... command) throws IOException{$/;"	m	class:Environment
+exec	src/main/java/com/lsenseney/orpheus/Environment.java	/^    public Process exec(String... command) throws IOException{$/;"	m	class:Environment
+finalizers	src/main/java/com/lsenseney/orpheus/Environment.java	/^    private Set<Function<Environment, ConfigurationFailedException>> finalizers = new HashSet<>();$/;"	f	class:Environment	file:
+generateEnvironement	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^    public abstract Environment generateEnvironement();$/;"	m	class:EnvironmentGenerator
+generateSuccessfullVersion	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^    public abstract Environment generateSuccessfullVersion();$/;"	m	class:EnvironmentGenerator
+generator	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    protected EnvironmentGenerator generator;$/;"	f	class:DependencySelector
+getConfigItemFactories	src/main/java/com/lsenseney/orpheus/PluginManger.java	/^    public static Map<String, ConfigItemFactory> getConfigItemFactories(){$/;"	m	class:PluginManger
+getDependencies	src/main/java/com/lsenseney/orpheus/Configuration.java	/^    public Set<Dependency> getDependencies() {$/;"	m	class:Configuration
+getDependencies	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public Collection<Dependency> getDependencies(){$/;"	m	class:GradleConfigItem
+getDependencies	src/main/java/com/lsenseney/orpheus/plugin/ConfigItem.java	/^    Collection<Dependency> getDependencies();$/;"	m	interface:ConfigItem
+getDependencySelector	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public DependencySelector getDependencySelector(){$/;"	m	class:GradleConfigItem
+getDependencySelector	src/main/java/com/lsenseney/orpheus/plugin/ConfigItem.java	/^    DependencySelector getDependencySelector();$/;"	m	interface:ConfigItem
+getEnvironmentGenerator	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public EnvironmentGenerator getEnvironmentGenerator(){$/;"	m	class:GradleConfigItem
+getEnvironmentGenerator	src/main/java/com/lsenseney/orpheus/plugin/ConfigItem.java	/^    EnvironmentGenerator getEnvironmentGenerator();$/;"	m	interface:ConfigItem
+getEnvironmentVerifiers	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public Collection<EnvironmentVerifier> getEnvironmentVerifiers(){$/;"	m	class:GradleConfigItem
+getEnvironmentVerifiers	src/main/java/com/lsenseney/orpheus/plugin/ConfigItem.java	/^    Collection<EnvironmentVerifier> getEnvironmentVerifiers();$/;"	m	interface:ConfigItem
+getMetadata	src/main/java/com/lsenseney/orpheus/Environment.java	/^    public Map<Object, Object> getMetadata() {$/;"	m	class:Environment
+getName	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public String getName(){$/;"	m	class:GradleConfigItem
+getName	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public String getName(){$/;"	m	class:MavenDependency
+getName	src/main/java/com/lsenseney/orpheus/plugin/ConfigItem.java	/^    String getName();$/;"	m	interface:ConfigItem
+getName	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^    public String getName();$/;"	m	interface:Dependency
+getSelector	src/main/java/com/lsenseney/orpheus/Configuration.java	/^    public DependencySelector getSelector() {$/;"	m	class:Configuration
+getVerifiers	src/main/java/com/lsenseney/orpheus/Configuration.java	/^    public Set<EnvironmentVerifier> getVerifiers() {$/;"	m	class:Configuration
+getVersions	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private static List<String> getVersions(String name) throws IOException{$/;"	m	class:MavenDependency	file:
+hasNext	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    public boolean hasNext(){$/;"	m	class:DependencySelector
+hasUntriedVersion	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public boolean hasUntriedVersion(){$/;"	m	class:MavenDependency
+hasUntriedVersion	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^    public boolean hasUntriedVersion();$/;"	m	interface:Dependency
+hasUntriedVersion	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^    public abstract boolean hasUntriedVersion();$/;"	m	class:EnvironmentGenerator
+init	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItemFactory.java	/^    public void init(){$/;"	m	class:GradleConfigItemFactory
+init	src/main/java/com/lsenseney/orpheus/plugin/ConfigItemFactory.java	/^    public void init();$/;"	m	interface:ConfigItemFactory
+initialVersion	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private String initialVersion;$/;"	f	class:MavenDependency	file:
+initialVersionIndex	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private int initialVersionIndex;$/;"	f	class:MavenDependency	file:
+main	src/main/java/com/lsenseney/orpheus/Orpheus.java	/^    public static void main(String[] args) throws ConfigurationFailedException, ConfigurationSetupFailedException{$/;"	m	class:Orpheus
+markFailure	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public void markFailure(){$/;"	m	class:MavenDependency
+markFailure	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^    public void markFailure();$/;"	m	interface:Dependency
+markFailure	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^    public abstract void markFailure();$/;"	m	class:EnvironmentGenerator
+markSuccess	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public void markSuccess(){$/;"	m	class:MavenDependency
+markSuccess	src/main/java/com/lsenseney/orpheus/plugin/Dependency.java	/^    public void markSuccess();$/;"	m	interface:Dependency
+markSuccess	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^    public abstract void markSuccess();$/;"	m	class:EnvironmentGenerator
+maxUntestedVersion	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private int maxUntestedVersion = -1;$/;"	f	class:MavenDependency	file:
+maxWorkingVersion	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private int maxWorkingVersion;$/;"	f	class:MavenDependency	file:
+merge	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    public DependencySelector merge(DependencySelector other){$/;"	m	class:DependencySelector
+metadata	src/main/java/com/lsenseney/orpheus/Environment.java	/^    private Map<Object, Object> metadata = new HashMap<>();$/;"	f	class:Environment	file:
+metadataTag	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    public static final Object metadataTag = new Object(){$/;"	f	class:MavenDependency
+minUntestedVersion	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private int minUntestedVersion = 0;$/;"	f	class:MavenDependency	file:
+minWorkingVersion	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private int minWorkingVersion;$/;"	f	class:MavenDependency	file:
+next	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    public Environment next() throws ConfigurationFailedException{$/;"	m	class:DependencySelector
+nextUntriedVersion	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentGenerator.java	/^    public abstract void nextUntriedVersion();$/;"	m	class:EnvironmentGenerator
+readAll	src/main/java/com/lsenseney/Utils.java	/^    public static String readAll(InputStream stream) throws IOException {$/;"	m	class:Utils
+readFile	src/main/java/com/lsenseney/orpheus/Environment.java	/^    public InputStream readFile(String filename) throws FileNotFoundException{$/;"	m	class:Environment
+recordValid	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    public void recordValid(Environment environ, boolean valid){$/;"	m	class:DependencySelector
+registerConfigItemFactory	src/main/java/com/lsenseney/orpheus/PluginManger.java	/^    public static void registerConfigItemFactory(String name, ConfigItemFactory factory){$/;"	m	class:PluginManger
+repoName	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private String repoName;$/;"	f	class:MavenDependency	file:
+selector	src/main/java/com/lsenseney/orpheus/Configuration.java	/^    private DependencySelector selector = null;$/;"	f	class:Configuration	file:
+setEnvironementGenerator	src/main/java/com/lsenseney/orpheus/plugin/DependencySelector.java	/^    public void setEnvironementGenerator(EnvironmentGenerator generator){$/;"	m	class:DependencySelector
+task	src/main/java/com/lsenseney/orpheus/gradle/GradleVerifier.java	/^    private String task;$/;"	f	class:GradleVerifier	file:
+used	src/main/java/com/lsenseney/orpheus/PluginManger.java	/^    private static boolean used = false;$/;"	f	class:PluginManger	file:
+verifier	src/main/java/com/lsenseney/orpheus/gradle/GradleConfigItem.java	/^    public GradleVerifier verifier;$/;"	f	class:GradleConfigItem
+verifiers	src/main/java/com/lsenseney/orpheus/Configuration.java	/^    private Set<EnvironmentVerifier> verifiers = new HashSet<>();$/;"	f	class:Configuration	file:
+verify	src/main/java/com/lsenseney/orpheus/gradle/GradleVerifier.java	/^    public boolean verify(Environment environ){$/;"	m	class:GradleVerifier
+verify	src/main/java/com/lsenseney/orpheus/plugin/EnvironmentVerifier.java	/^    boolean verify(Environment environ);$/;"	m	interface:EnvironmentVerifier
+versionNumber	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private static final Pattern versionNumber = Pattern.compile("<version>([^<]*)<\/version>");$/;"	f	class:MavenDependency	file:
+versions	src/main/java/com/lsenseney/orpheus/gradle/MavenDependency.java	/^    private List<String> versions;$/;"	f	class:MavenDependency	file:
+writeFile	src/main/java/com/lsenseney/orpheus/Environment.java	/^    public OutputStream writeFile(String filename, boolean append) throws FileNotFoundException{$/;"	m	class:Environment
