@@ -10,7 +10,8 @@ repositories {
 }
 
 dependencies {
-    compile 'org.json:json:20180813'
+    compile 'org.json:json:+'
+    compile 'org.junit.jupiter:junit-jupiter-api:[5.2.0,)'
 }
 
 jar {

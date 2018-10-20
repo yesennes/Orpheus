@@ -24,8 +24,8 @@ import com.lsenseney.Utils;
 public class GradleConfigItem implements ConfigItem{
     public GradleVerifier verifier;
     public List<Dependency> dependencies;
-    private static final Pattern dependenciesBlock = Pattern.compile("dependencies\\s*{([^}]*)}");
-    private static final Pattern dependenciesPattern = Pattern.compile("'(:?[^:']+):([^:'])'");
+    private static final Pattern dependenciesBlock = Pattern.compile("dependencies\\s*\\{([^}]*)\\}");
+    private static final Pattern dependenciesPattern = Pattern.compile("'((?::?([^:']+))+)'");
 
     public GradleConfigItem(JSONObject object) throws IOException{
         try{
@@ -39,7 +39,8 @@ public class GradleConfigItem implements ConfigItem{
             dependencies = new ArrayList<>();
             Matcher dependenciesMatcher = dependenciesPattern.matcher(matcher.group(1));
             while(dependenciesMatcher.find()){
-                dependencies.add(new MavenDependency(dependenciesMatcher.group(1), dependenciesMatcher.group(2)));
+                String whole = dependenciesMatcher.group(1);
+                dependencies.add(new MavenDependency(whole.substring(0, whole.lastIndexOf(':')), dependenciesMatcher.group(2)));
             }
         }
     }

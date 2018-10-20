@@ -1,6 +1,9 @@
 package com.lsenseney.orpheus.gradle;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+
+import com.lsenseney.orpheus.PluginManger;
+import com.sun.source.util.Plugin;
 import org.json.JSONObject;
 
 import com.lsenseney.orpheus.plugin.ConfigItemFactory;

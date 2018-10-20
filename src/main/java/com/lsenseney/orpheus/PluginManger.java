@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.lsenseney.orpheus.gradle.GradleConfigItemFactory;
 import com.lsenseney.orpheus.plugin.ConfigItemFactory;
 import com.lsenseney.orpheus.plugin.ConfigItem;
 /**
@@ -16,6 +18,7 @@ public class PluginManger {
     private static boolean used = false;
 
     public static Map<String, ConfigItemFactory> getConfigItemFactories(){
+        registerConfigItemFactory("gradle", new GradleConfigItemFactory());
         if(!used){
             for(ConfigItemFactory f : CONFIG_ITEM_FACTORIES.values())
                 f.init();

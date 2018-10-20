@@ -1,0 +1,5 @@
+{
+    "gradle": {
+        "verify": "build"
+    }
+}

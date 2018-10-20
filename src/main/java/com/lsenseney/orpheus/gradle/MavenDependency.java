@@ -54,11 +54,12 @@ public class MavenDependency implements Dependency{
         return repoName;
     }
 
-    private void configureEnvironement(Environment environ, int version) throws ConfigurationFailedException{
-        configureEnvironement(environ, versions.get(version));
+    private void configureEnvironment(Environment environ, int version) throws ConfigurationFailedException{
+        configureEnvironment(environ, versions.get(version));
     }
 
-    private void configureEnvironement(Environment environ, String version) throws ConfigurationFailedException{
+    private void configureEnvironment(Environment environ, String version) throws ConfigurationFailedException{
+        System.out.println("Configuring from:" + version);
         try{
             if(!environ.getMetadata().containsKey(metadataTag)){
                 InputStream stream = environ.readFile("build.gradle");
@@ -74,19 +75,19 @@ public class MavenDependency implements Dependency{
             }
 
             environ.getMetadata().compute(metadataTag, (key, buildScript) ->
-                    ((String)buildScript).replaceAll("'" + repoName + ":[^']*'", "'" + repoName + ":" + version));
+                    ((String)buildScript).replaceAll("'" + repoName + ":[^']*'", "'" + repoName + ":" + version + "'"));
         }catch(IOException e){
             throw new ConfigurationFailedException("Configuration of " + repoName + " failed, could not read build.gradle", e);
         }
     }
 
-    public void configureEnvironement(Environment environ) throws ConfigurationFailedException{
+    public void configureEnvironment(Environment environ) throws ConfigurationFailedException{
         if(maxUntestedVersion == -1){
-            configureEnvironement(environ, versions.get(versions.size() - 1));
+            configureEnvironment(environ, versions.get(versions.size() - 1));
         } else if(maxUntestedVersion > maxWorkingVersion){
-            configureEnvironement(environ, (maxUntestedVersion + maxWorkingVersion + 1) / 2);
+            configureEnvironment(environ, (maxUntestedVersion + maxWorkingVersion + 1) / 2);
         } else if(minUntestedVersion < minWorkingVersion){
-            configureEnvironement(environ, (minUntestedVersion + minWorkingVersion + 1) / 2);
+            configureEnvironment(environ, (minUntestedVersion + minWorkingVersion) / 2);
         } else
             throw new IllegalStateException("All versions have been tested");
     }
@@ -98,7 +99,7 @@ public class MavenDependency implements Dependency{
         } else if(maxUntestedVersion > maxWorkingVersion){
             maxWorkingVersion = (maxUntestedVersion + maxWorkingVersion + 1) / 2;
         } else if(minUntestedVersion < minWorkingVersion){
-            minWorkingVersion = (minUntestedVersion + minWorkingVersion + 1) / 2;
+            minWorkingVersion = (minUntestedVersion + minWorkingVersion) / 2;
         } else
             throw new IllegalStateException("All versions have been tested");
     }
@@ -107,15 +108,15 @@ public class MavenDependency implements Dependency{
         if(maxUntestedVersion == -1){
             maxUntestedVersion = versions.size() - 2;
         } else if(maxUntestedVersion > maxWorkingVersion){
-            maxWorkingVersion = (maxUntestedVersion + maxWorkingVersion + 1) / 2;
+            maxUntestedVersion = ((maxUntestedVersion + maxWorkingVersion + 1) / 2) - 1;
         } else if(minUntestedVersion < minWorkingVersion){
-            minWorkingVersion = (minUntestedVersion + minWorkingVersion + 1) / 2;
+            minUntestedVersion = ((minUntestedVersion + minWorkingVersion) / 2) + 1;
         } else
             throw new IllegalStateException("All versions have been tested");
     }
 
     public void configureSuccessfullVersion(Environment environ) throws ConfigurationFailedException{
-        configureEnvironement(environ, versions.get(minWorkingVersion));
+        configureEnvironment(environ, versions.get(minWorkingVersion));
     }
 
     public boolean hasUntriedVersion(){
@@ -123,7 +124,7 @@ public class MavenDependency implements Dependency{
     }
 
     private static List<String> getVersions(String name) throws IOException{
-        URL url = new URL("https://repo.maven.apache.org/maven2/org/json/json/maven-metadata.xml");
+        URL url = new URL("https://repo.maven.apache.org/maven2/" + name.replaceAll("[:.]", "/") + "/maven-metadata.xml");
         URLConnection connect = url.openConnection();
         connect.connect();
         InputStream file = connect.getInputStream();

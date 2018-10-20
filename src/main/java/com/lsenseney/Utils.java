@@ -1,6 +1,8 @@
 package com.lsenseney;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+
 /**
  *
  * @author Luke Senseney
@@ -17,5 +19,12 @@ public class Utils {
         }
 
         return builder.toString();
+    }
+
+    public static void copyAll(InputStream in, OutputStream out) throws IOException{
+        int len = 0;
+        while((len = in.read(buf)) != -1){
+            out.write(buf, 0, len);
+        }
     }
 }

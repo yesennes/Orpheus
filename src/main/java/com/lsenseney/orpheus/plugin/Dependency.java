@@ -7,7 +7,7 @@ import com.lsenseney.orpheus.Environment;
  **/
 public interface Dependency extends Cloneable{
     public String getName();
-    public void configureEnvironement(Environment e) throws ConfigurationFailedException;
+    public void configureEnvironment(Environment e) throws ConfigurationFailedException;
 
     public void markSuccess();
     public void markFailure();

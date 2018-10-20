@@ -1,4 +1,5 @@
 package com.lsenseney.orpheus;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.stream.Collectors;
@@ -16,7 +17,7 @@ import com.lsenseney.orpheus.plugin.*;
 public class Configuration {
     private DependencySelector selector = null;
     private Set<EnvironmentVerifier> verifiers = new HashSet<>();
-    private Set<Dependency> dependencies = new HashSet<>();
+    private List<Dependency> dependencies = new ArrayList<>();
 
     public Configuration(InputStream input) throws IllegalArgumentException, ConfigurationSetupFailedException {
         JSONObject obj = new JSONObject(new JSONTokener(input));
@@ -72,13 +73,18 @@ public class Configuration {
                     throw new IllegalArgumentException(generatorSource + " incompatable with " + item.getName());
                 }
             }
-
-            selector.setEnvironementGenerator(generator);
-            selector.addDependencies(dependencies);
-            dependencies.addAll(item.getDependencies());
             dependencies.addAll(item.getDependencies());
             verifiers.addAll(item.getEnvironmentVerifiers());
         }
+
+        if(selector == null){
+            selector = new DependencySelector();
+        }
+        if(generator == null) {
+            generator = new DefaultEnvironmentGenerator();
+        }
+        selector.setEnvironmentGenerator(generator);
+        selector.addDependencies(dependencies);
     }
     public DependencySelector getSelector() {
         return selector;
@@ -88,7 +94,7 @@ public class Configuration {
         return verifiers;
     }
 
-    public Set<Dependency> getDependencies() {
+    public List<Dependency> getDependencies() {
         return dependencies;
     }
 }

@@ -5,7 +5,7 @@ import java.util.ListIterator;
 import java.util.List;
 import java.util.Collections;
 import java.util.Collection;
-import java.util.Iterator;
+
 import com.lsenseney.orpheus.Environment;
 /**
  *
@@ -20,7 +20,14 @@ public class DependencySelector {
 
     public void recordValid(Environment environ, boolean valid){
         if(currentlyTesting == null){
-            generator.markFailure();
+            if(valid){
+                generator.markSuccess();
+                currentlyTesting = dependencies.listIterator();
+            }else {
+                current.cleanUp();
+                current = null;
+                generator.markFailure();
+            }
         } else {
             Dependency testing = currentlyTesting.next();
             if(valid){
@@ -36,8 +43,8 @@ public class DependencySelector {
         return null;
     }
 
-    public void setEnvironementGenerator(EnvironmentGenerator generator){
-        generator = generator;
+    public void setEnvironmentGenerator(EnvironmentGenerator generator){
+        this.generator = generator;
     }
 
     public void addDependencies(Dependency... dependencies){
@@ -50,11 +57,11 @@ public class DependencySelector {
 
     public Environment next() throws ConfigurationFailedException{
         if(!hasNext()){
-            throw new NoSuchElementException();
+            return null;
         }
         try{
             if(current == null){
-                current = generator.generateEnvironement();
+                current = generator.generateEnvironment();
                 for(Dependency d : dependencies){
                     d.configureSuccessfullVersion(current);
                 }
@@ -64,10 +71,10 @@ public class DependencySelector {
                     currentlyTesting = dependencies.listIterator();
                 }
                 Dependency dependency = currentlyTesting.next();
-                dependency.configureEnvironement(current);
+                dependency.configureEnvironment(current);
                 currentlyTesting.previous();
             }
-
+            current.runFinalizers();
             return current;
         }catch(ConfigurationFailedException e){
             current.cleanUp();
@@ -75,16 +82,17 @@ public class DependencySelector {
         }
     }
 
-    public boolean hasNext(){
+    private boolean hasNext() throws ConfigurationFailedException{
         if(currentlyTesting == null){
             return generator.hasUntriedVersion();
         } else {
             while(currentlyTesting.hasNext()){
                 Dependency dependency = currentlyTesting.next();
-                if(dependency.hasUntriedVersion()){
+                if(dependency.hasUntriedVersion()) {
                     currentlyTesting.previous();
                     return true;
                 }
+                dependency.configureSuccessfullVersion(current);
             }
             currentlyTesting = null;
             return generator.hasUntriedVersion();

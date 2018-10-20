@@ -47,6 +47,14 @@ public class Environment{
         finalizers.add(consumer);
     }
 
+    public void runFinalizers() throws ConfigurationFailedException{
+        for(Function<Environment, ConfigurationFailedException> finalizer : finalizers){
+            ConfigurationFailedException e = finalizer.apply(this);
+            if(e != null)
+                throw e;
+        }
+    }
+
     public void cleanUp(){
     }
 }
